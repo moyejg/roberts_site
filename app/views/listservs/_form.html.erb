@@ -1,0 +1,9 @@
+<%= form_with(model: @listserv, local: true) do |form| %>
+  
+
+  <div class="form-group">
+    <%= form.email_field :email, autocomplete: "email", placeholder: "Enter your email to sign up for event notifications!", class: "form-control" %>   
+  </div>
+
+ 
+<% end %>

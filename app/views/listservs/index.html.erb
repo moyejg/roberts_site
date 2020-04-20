@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listservs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listservs.each do |listserv| %>
+      <tr>
+        <td><%= listserv.email %></td>
+        <td><%= link_to 'Show', listserv %></td>
+        <td><%= link_to 'Edit', edit_listserv_path(listserv) %></td>
+        <td><%= link_to 'Destroy', listserv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listserv', new_listserv_path %>
