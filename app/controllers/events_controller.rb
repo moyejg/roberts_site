@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @events = Event.order('created_at DESC')
     @user = User.find_by(params[:user_id])
   end
 
