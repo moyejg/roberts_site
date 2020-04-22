@@ -1,6 +1,11 @@
 
-<% if @user.admin == true %>
+<% if current_user.try(:admin?) %>
   <%= link_to 'New Event', new_event_path, style:"color: white; font-size: 20px;" %>
+<% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
 <% end %>
 
   
