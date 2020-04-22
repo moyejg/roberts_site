@@ -27,9 +27,11 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @listservs = Listserv.all
 
     respond_to do |format|
       if @event.save
+        EventMailer.with(event: @event).event_notification_email.deliver_now
         format.html { redirect_to events_url, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else

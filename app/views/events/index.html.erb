@@ -9,7 +9,11 @@
       <div class="card mb-3 mx-auto">
         <div class="row no-gutters">
           <div class="col-md-6">
-            <%= image_tag event.main_image, class:"card-img" %>
+            <% if event.main_image.attached? %>
+              <%= image_tag event.main_image, class:"card-img" %>
+            <% else %>
+              <%= image_tag ('https://cdn7.allevents.in/banners/109a3520-f740-11e9-889e-dd24da2e11f8-rimg-w503-h296-gmir.jpg?v=1572019014'), class:"card-img"%>
+            <% end %>
           </div>
           <div class="col-md-6">                
             <div class="card-body">

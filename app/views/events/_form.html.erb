@@ -11,34 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.text_field :name, placeholder: "Enter the event name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :date, placeholder: "Enter event date", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :time, placeholder: "Enter what time the event is", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :place, placeholder: "Enter where the event is", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_area :description, placeholder: "Write a description of the event here", class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.text_field :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.text_field :time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :main_image %>
-    <%= form.file_field :main_image %>
+    <%= form.file_field :main_image, placeholder: "Select an image", class: "form-control" %>
   </div>
 
   <div class="actions">
